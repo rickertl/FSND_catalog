@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for category in categories %}
+    <category>
+        <name>{{category.name}}</name>
+        <user>{{category.id}}</user>
+    </category>
+    {% endfor %}
+</categories>

@@ -1,0 +1,61 @@
+{% extends "main.html" %} {% block content %} {% include "header.html" %}
+<div class='flash'>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>
+            <strong> {{ message }} </strong>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" style="overflow:hidden">
+    <div class="container visible-md visible-lg">
+        <video id="my-video" class="video" muted loop>
+            <source src="{{ url_for('static', filename='video/337801.mp4') }}"
+                    type="video/mp4">
+            <source src="{{ url_for('static', filename='video/337801.ogv') }}"
+                    type="video/ogg">
+            <source src="{{ url_for('static', filename='video/337801.webm') }}"
+                    type="video/webm">
+        </video>
+    </div>
+    <div class="container">
+        <h1>Rubber Duck Catalog</h1>
+
+        <p>If you love Rubber Ducks, you have come to the right place.</p>
+        {% for category in categories %}
+        <p><a class="btn btn-primary btn-lg"
+              href="{{url_for('showAllItems', category_id = category.id)}}"
+              role="button">{{category.name}} &raquo;</a></p>
+        {% endfor %}
+        <p><a class="btn btn-primary btn-lg add"
+              href="{{url_for('newCategory')}}" role="button">+Add Category</a>
+        </p>
+
+        <div class="api">
+            <a href="{{url_for('categoriesJSON', category = category)}}">JSON
+            </a> | <a href="{{url_for('categoriesXML', category = category)}}">XML
+        </a></div>
+    </div>
+</div>
+{% include "footer.html" %}
+<script>
+    (function () {
+        /**
+         * Video element
+         * @type {HTMLElement}
+         */
+        var video = document.getElementById("my-video");
+
+        /**
+         * Check if video can play, and play it
+         */
+        video.addEventListener("canplay", function () {
+            video.play();
+        });
+    })();
+</script>
+{% endblock %}

@@ -1,0 +1,150 @@
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #FFFF99;
+    color: #2e6da4;
+}
+
+.container {
+    z-index: 2;
+    position: relative;
+}
+
+#navbar {
+    height: 50px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: orange;
+}
+
+.navbar-inverse {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #2e6da4;
+}
+
+.jumbotron {
+    background-color: white;
+}
+
+.jumbotron h1, .jumbotron p {
+    color: #2e6da4;
+}
+
+.login-btn {
+    margin-top: 8px;
+}
+
+.all-cat {
+    margin-right: 20px;
+}
+
+.btn-primary {
+    color: #2e6da4;
+    background-color: orange;
+    border-color: orange;
+    min-width: 210px;
+}
+
+.add {
+    background-color: white;
+}
+
+hr {
+    border-top-color: #337ab7;
+    width: 95%;
+}
+
+.credits {
+    text-align: right;
+}
+
+.credits a {
+    color: grey;
+    font-style: italic;
+}
+
+.flash {
+    background-color: pink;
+}
+
+.flash ul {
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+.flash li {
+    color: green;
+    text-align: center;
+    padding: 5px;
+}
+
+.sub-page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.item {
+    background: #F0F0F0;
+    padding: 20px;
+    margin: 20px 20px 20px -20px;
+    border-radius: 10px;
+}
+
+.item h3 {
+    margin-top: 0;
+}
+
+.item p {
+    color: orange;
+}
+
+.item .price {
+    color: #2e6da4;
+    font-weight: 800;
+}
+
+.btn-default {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.btn-in {
+    background-color: white;
+    border-color: white;
+    color: orange;
+}
+
+.glyphicon {
+    margin-right: 10px;
+}
+
+.api {
+    margin-top: 20px;
+    color: grey;
+}
+
+.api a {
+    color: grey;
+}
+
+.creator img {
+    width: 200px;
+}
+
+.video {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    min-width: 810px;
+}

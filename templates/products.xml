@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for i in items %}
+    <item>
+        <id>{{i.id}}</id>
+        <name>{{i.name}}</name>
+        <description>{{i.description}}</description>
+        <image>{{i.image}}</image>
+        <price>{{i.price}}</price>
+    </item>
+    {% endfor %}
+</items>
