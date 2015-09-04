@@ -40,7 +40,7 @@ https://github.com/rickertl
 
 ### Start up ###
 1. Once setup complete, run application within the VM by typing ​'python
-   /vagrant/catalog/application.py' into the Terminal
+   application.py' into the Terminal
 2. Navigate to http://0.0.0.0:5000/ with your browser
    (note: Mac OSX Safari currently is having issue with HTML 5 video rendering)
 
