@@ -1,22 +1,22 @@
-FSND Catalog App - P3
+#FSND Catalog App - P3
 
 
-### Author ###
+###Author
 Rick Ertl
 https://github.com/rickertl
 
 
-### App Features ###
-• Provides a list of items within a variety of categories
-• Integrates third party Google Plus and Facebook OAuth user registration
+###App Features
+* Provides a list of items within a variety of categories
+* Integrates third party Google Plus and Facebook OAuth user registration
   and authentication
-• Authenticated users have the ability to post, edit, and delete their
+* Authenticated users have the ability to post, edit, and delete their
   own items
-• JSON and XML API endpoints for categories and category items
-• Image upload capability available per item
+* JSON and XML API endpoints for categories and category items
+* Image upload capability available per item
 
 
-### Setup ###
+###Setup
 1. Start with any local operating system such as Mac OS X, Linux, or Windows
 2. Install VirtualBox
 3. Install Vagrant
@@ -38,14 +38,14 @@ https://github.com/rickertl
     Terminal
 
 
-### Start up ###
+###Start up
 1. Once setup complete, run application within the VM by typing ​'python
-   application.py' into the Terminal
+   /vagrant/catalog/application.py' into the Terminal
 2. Navigate to http://0.0.0.0:5000/ with your browser
    (note: Mac OSX Safari currently is having issue with HTML 5 video rendering)
 
 
-### Credits ###
+###Credits
 • Python
 • Flask
 • JQuery

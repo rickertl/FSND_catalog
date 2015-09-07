@@ -7,6 +7,7 @@
 
             <form action="#" method="post">
                 <div class="form-group">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" maxlength="80"
                            name="name">
@@ -17,7 +18,7 @@
                         <span class="glyphicon glyphicon-plus"
                               aria-hidden="true"></span>Create
                     </button>
-                    <a href='{{url_for(' showCategories')}}'>
+                    <a href='{{url_for('showCategories')}}'>
                     <button type="button" class="btn btn-default delete">
                         <span class="glyphicon glyphicon-remove"
                               aria-hidden="true"></span>Cancel

@@ -9,3 +9,4 @@ pip install oauth2client
 pip install requests
 pip install httplib2
 pip install Flask-XML-RPC
+pip install flask-seasurf

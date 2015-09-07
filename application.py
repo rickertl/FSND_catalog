@@ -1,3 +1,16 @@
+"""
+application.py: Main file to run catalog app that does:
+- Provides a list of items within a variety of categories
+- Integrates third party Google Plus and Facebook OAuth user registration
+  and authentication
+- Authenticated users have the ability to post, edit, and delete their
+  own items
+- JSON and XML API endpoints for categories and category items
+- Image upload capability available per item
+"""
+__author__ = "Rick Ertl"
+
+
 # ~~~ Import required modules and classes ~~~
 from flask import (Flask, render_template, request, redirect, jsonify,
                    url_for, flash, send_from_directory)
@@ -28,9 +41,13 @@ from werkzeug import secure_filename
 # Required for XML API
 from jinja2 import Environment, FileSystemLoader
 
+# Required for preventing CSRF
+from flask.ext.seasurf import SeaSurf
+
 
 # Initialize the Flask app
 app = Flask(__name__)
+csrf = SeaSurf(app)
 
 
 # Connect to Database and create database session
@@ -53,6 +70,8 @@ def showLogin():
 
 
 # Facebook OAuth Connect
+# SeaSurf exempt decorator to indicate not to be checked.
+@csrf.exempt
 @app.route('/fbconnect', methods=['POST'])
 def fbconnect():
     if request.args.get('state') != login_session['state']:
@@ -140,6 +159,8 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog"
 
 
+# SeaSurf exempt decorator to indicate not to be checked.
+@csrf.exempt
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     # Validate state token
@@ -465,7 +486,6 @@ def editItem(category_id, item_id):
     if 'username' not in login_session:
         return redirect('/login')
     category = session.query(Category).filter_by(id=category_id).one()
-    # items = session.query(Item).filter_by(category_id=category_id).all()
     editedItem = session.query(Item).filter_by(id=item_id).one()
     if login_session['user_id'] != category.user_id:
         return "<script>function myFunction() {alert('You are not authorized" \
